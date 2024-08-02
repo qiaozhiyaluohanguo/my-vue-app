@@ -1,0 +1,14 @@
+{
+  "envId": "your-env-id",
+  "framework": {
+    "name": "flask",
+    "plugins": {
+      "server": {
+        "use": "@cloudbase/framework-plugin-flask",
+        "inputs": {
+          "entry": "src/main.py"
+        }
+      }
+    }
+  }
+}
