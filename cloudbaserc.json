@@ -6,7 +6,7 @@
       "server": {
         "use": "@cloudbase/framework-plugin-function",
         "inputs": {
-          "functionRootPath": ".",
+          "functionRootPath": "./",
           "functions": [
             {
               "name": "flask_app",
@@ -14,7 +14,9 @@
               "envVariables": {},
               "runtime": "Python3.6",
               "installDependency": true,
-              "handler": "flask_app.main"
+              "handler": "flask_app.main",
+              "ignore": ["node_modules", ".*"],
+              "functionDistPath": "./"
             }
           ],
           "servicePaths": {
