@@ -246,3 +246,5 @@ if __name__ == '__main__':
     Timer(1, open_browser).start()
     logging.info("应用程序正在启动，浏览器将自动打开。如果没有自动打开，请手动访问 http://127.0.0.1:5000/")
     app.run(debug=True)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
