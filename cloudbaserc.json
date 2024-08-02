@@ -7,12 +7,18 @@
         "use": "@cloudbase/framework-plugin-function",
         "inputs": {
           "functionRootPath": ".",
-          "functionName": "flask-app",
-          "runtime": "Python3.6",
-          "installDependency": true,
-          "apigatewayConf": {
-            "protocols": ["http"],
-            "environment": "release"
+          "functions": [
+            {
+              "name": "flask-app",
+              "timeout": 5,
+              "envVariables": {},
+              "runtime": "Python3.6",
+              "installDependency": true,
+              "handler": "flask_app.main"
+            }
+          ],
+          "servicePaths": {
+            "flask-app": "/api"
           }
         }
       },
