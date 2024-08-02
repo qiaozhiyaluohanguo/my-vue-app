@@ -9,7 +9,7 @@
           "functionRootPath": ".",
           "functions": [
             {
-              "name": "flask-app",
+              "name": "flask_app",
               "timeout": 5,
               "envVariables": {},
               "runtime": "Python3.6",
@@ -18,7 +18,7 @@
             }
           ],
           "servicePaths": {
-            "flask-app": "/api"
+            "flask_app": "/api"
           }
         }
       },
