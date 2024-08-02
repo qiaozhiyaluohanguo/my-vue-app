@@ -1,16 +1,30 @@
 {
   "envId": "my-vue-app-1gutshpt7c610c25",
   "framework": {
-    "name": "flask",
+    "name": "vue-flask",
     "plugins": {
       "server": {
         "use": "@cloudbase/framework-plugin-node",
         "inputs": {
           "entry": "app.py",
-          "path": "/",
+          "path": "/api",
           "name": "flask-app",
-          "buildCommand": "pip install -r requirements.txt",
-          "startCommand": "python app.py"
+          "buildCommand": "pip install -r requirements.txt && npm install && npm run build",
+          "startCommand": "python app.py",
+          "envVariables": {
+            "FLASK_ENV": "production"
+          }
+        }
+      },
+      "client": {
+        "use": "@cloudbase/framework-plugin-website",
+        "inputs": {
+          "buildCommand": "npm run build",
+          "outputPath": "dist",
+          "ignore": [
+            "node_modules",
+            "cloudbaserc.json"
+          ]
         }
       }
     }
