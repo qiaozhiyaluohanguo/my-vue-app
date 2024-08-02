@@ -1,4 +1,4 @@
-import app
+from app import app
 
 def main(event, context):
-    return app.app(event, context)
+    return app
