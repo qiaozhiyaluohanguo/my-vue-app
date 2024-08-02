@@ -4,9 +4,13 @@
     "name": "flask",
     "plugins": {
       "server": {
-        "use": "@cloudbase/framework-plugin-flask",
+        "use": "@cloudbase/framework-plugin-node",
         "inputs": {
-          "entry": "src/main.py"
+          "entry": "app.py",
+          "path": "/",
+          "name": "flask-app",
+          "buildCommand": "pip install -r requirements.txt",
+          "startCommand": "python app.py"
         }
       }
     }
